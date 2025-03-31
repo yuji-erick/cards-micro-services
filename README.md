@@ -6,9 +6,13 @@ Cards Micro-Services
 To run this Micro-Service:
 
 1- MySQL is mandatory in the local machine.
+
 2- Configure connectivity to MuSQL in the application.yml. Default root / root for user and password.
+
 2- Create the Database called "cards".
+
 3- Within this database, run the create tables script, in the root of this project. File: CREATE_TABLES.sql.
+
 4- Run the application.
 
 ### Postman documentation
@@ -60,5 +64,7 @@ It was developed 6 APIs, which can be described below.
 Below are a few items that can be considered in a future version of this Micro-Service.
 
 1- Run MySQL and SpringBoot within docker;
+
 2- Improve card validation numbers;
+
 3- Implement a RabbitMQ or Kafka to be responsible for card creation;

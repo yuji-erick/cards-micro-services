@@ -7,7 +7,7 @@ To run this Micro-Service:
 
 1- MySQL is mandatory in the local machine.
 
-2- Configure connectivity to MuSQL in the application.yml. Default root / root for user and password.
+2- Configure connectivity to MySQL in the application.yml. Default root / root for user and password.
 
 2- Create the Database called "cards".
 

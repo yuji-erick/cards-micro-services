@@ -68,3 +68,5 @@ Below are a few items that can be considered in a future version of this Micro-S
 2- Improve card validation numbers;
 
 3- Implement a RabbitMQ or Kafka to be responsible for card creation;
+
+4- Unit tests;

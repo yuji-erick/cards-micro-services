@@ -26,13 +26,13 @@ public class JWTUtils {
                 .setSubject(username)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-                .signWith(getSigningKey()) // Correto para HMAC
+                .signWith(getSigningKey())
                 .compact();
     }
 
     public String extractUsername(String token) {
         return Jwts.parserBuilder()
-                .setSigningKey(getSigningKey()) // Método correto na versão mais recente
+                .setSigningKey(getSigningKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody()
@@ -44,13 +44,13 @@ public class JWTUtils {
             String extractedUsername = extractUsername(token);
             return username.equals(extractedUsername) && !isTokenExpired(token);
         } catch (JwtException | IllegalArgumentException e) {
-            return false; // Token inválido ou expirado
+            return false;
         }
     }
 
     private boolean isTokenExpired(String token) {
         Date expiration = Jwts.parserBuilder()
-                .setSigningKey(getSigningKey()) // Correto para HMAC
+                .setSigningKey(getSigningKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody()

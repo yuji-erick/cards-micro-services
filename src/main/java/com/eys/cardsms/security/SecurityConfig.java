@@ -23,11 +23,11 @@ public class SecurityConfig {
         http
             .csrf().disable()
             .authorizeHttpRequests()
-            .requestMatchers("/auth/token").permitAll() // Permitir login sem autenticação
+            .requestMatchers("/auth/token").permitAll()
             .anyRequest().authenticated()
             .and()
             .sessionManagement()
-            .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // JWT não usa sessão
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
